@@ -1,5 +1,5 @@
 project_id              = "PROJECT_ID"
-n8n_encryption_key      = "MiVRYKrzV1zROGkuRUgfh8rCIuTRrdy4"
+n8n_encryption_key      = "YOUR_KEY"
 machine_type            = "e2-medium"
 n8n_port                = 5678
 disk_size               = 50
