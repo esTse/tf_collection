@@ -55,3 +55,7 @@ resource "google_compute_instance" "n8n_instance" {
     scopes = ["cloud-platform"]
   }
 }
+
+output "instance_url" {
+  value = "Instance deployed, takes some time to be accessible: http://${google_compute_instance.n8n_instance.network_interface[0].access_config[0].nat_ip}:${var.n8n_port}"
+}
