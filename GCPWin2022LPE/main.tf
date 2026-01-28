@@ -66,6 +66,8 @@ resource "google_compute_instance" "vm_windows" {
       # 2. Install basic tools
       choco install python -y
       choco install git -y
+      choco install mingw -y 
+      choco install nodejs -y
       choco install vscode -y 
 
       # 3. Create non-privileged attacker user
