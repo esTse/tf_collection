@@ -1,11 +1,12 @@
 #!/bin/bash
 # Update and install dependencies
 apt-get update
-apt-get install -y curl gnupg2
+apt-get install -y curl gnupg2 zip
 
-# Install Node.js (using setup script for latest LTS is common practice, but standard repo is safer for simplicity unless specified)
-# Using standard repo for stability and simplicity as requested "debian vm with node"
-apt-get install -y nodejs npm
+NODE_MAJOR=22
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+apt-get update
+apt-get install nodejs -y
 
 # Install ncat
 # ncat is often part of the nmap package in Debian
